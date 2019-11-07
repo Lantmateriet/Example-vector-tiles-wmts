@@ -1,0 +1,3636 @@
+{
+  "version": 8,
+  "sources": {
+    "vt-source": {
+      "type": "vector",
+      "minzoom": 14,
+      "maxzoom": 17,
+      "tiles": [
+        "https://mapslab.lantmateriet.se/vt-open/wmts/1.0.0/se10/default/3857/{z}/{y}/{x}.mvt"
+      ]
+    }
+  },
+  "sprite": "https://mapslab.lantmateriet.se/vt/resources/style/symbols/twk",
+  "glyphs": "https://mapslab.lantmateriet.se/vt/resources/style/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "skogbarr_skogghygge",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "SKOGBARR",
+          "SKOGHYGGE"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(212, 238, 183, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "skoglov",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SKOGLÖV"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(227, 247, 199, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "fjällbjörkskog",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SKOGFBJ"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(223, 245, 217, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "oppen_mark",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ÖPMARK"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 255, 234, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "kalfjäll",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ÖPKFJÄLL"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 255, 242, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "odlad_aker",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ODLÅKER"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 247, 166, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "odlad_ejaker",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ODLEJÅK"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 247, 166, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "fruktodling",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ODLFRUKT"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 247, 166, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "vatten",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VATTEN"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(203, 234, 255, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "bebyggelse_lag",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEBLÅG"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(242, 207, 155, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "bebyggelse_hog",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEBHÖG"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(230, 178, 140, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "bebyggelse_sluten",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEBSLUT"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(217, 148, 97, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "bebyggelse_industri",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEBIND"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(240, 240, 240, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "oppet_torg",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ÖPTORG"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(242, 242, 242, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "bebyggelse_ospecificerad",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEB"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(242, 180, 121, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "bebyggelse",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEBYGG"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(224, 223, 227, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "glaciar",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ÖPGLAC"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 255, 255,1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "mark_ospecificerad",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "MRKÖVR",
+          "MRKO"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 255, 255,1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "sankmark",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SANK"
+        ]
+      ],
+      "paint": {
+        "fill-pattern": "sankmark",
+        "fill-opacity": 0.5,
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "sankmark_svarframkomlig",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SANKSVÅ"
+        ]
+      ],
+      "paint": {
+        "fill-pattern": "sankmark_svar",
+        "fill-opacity": 0.5,
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "sankmark_blekvät",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SANKBLE"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(0, 166, 255, 1)",
+        "fill-opacity": 0.5,
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "vatten_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "STRAND"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 166, 255, 1)",
+        "line-width": 1.5
+      }
+    },
+    {
+      "id": "vatten_kantlinje_otydlig",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "mark",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "STRANDOTY"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 166, 255, 1)",
+        "line-opacity": 0.5,
+        "line-width": 1.5,
+        "line-dasharray": [
+          6,
+          3
+        ]
+      }
+    },
+    {
+      "id": "anlaggningsomrade",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ANLOMR"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          10,
+          2
+        ]
+      }
+    },
+    {
+      "id": "idrottsplan",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "IDRPLAN"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(207, 242, 207, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "idrottsplan_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "IDRPLAN"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": 0.5
+      }
+    },
+    {
+      "id": "flygbana",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FLYGBAN"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(255, 225, 190, 1)",
+        "fill-outline-color": "rgba(0, 0, 0, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "transformatorsomrade",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "TRAFOMR"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "vattendrag",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VATTDR.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 166, 255)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "vattendrag_under_jord",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VATTDRU.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 166, 255)",
+        "line-opacity": 1,
+        "line-width": 14
+      }
+    },
+    {
+      "id": "vattenfall",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VATTF.K"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 166, 255)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "fors",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORS.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 166, 255)",
+        "line-opacity": 0.5,
+        "line-width": 2,
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "dykdalb_mindre",
+      "type": "circle",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "DYKDALB.C"
+        ]
+      ],
+      "paint": {
+        "circle-radius": 4,
+        "circle-color": "rgb(255, 255, 255)",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "rgb(78, 78, 78)"
+      }
+    },
+    {
+      "id": "slussport",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SLUSSP.C"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "slussport",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "branning",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BRÄNNING.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "branning",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "stromriktningspil",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VATTPIL.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "stromriktningspil",
+        "icon-rotation-alignment": "map",
+        "icon-rotate": [
+          "get",
+          "rotation"
+        ],
+        "icon-size": 2
+      }
+    },
+    {
+      "id": "stromriktning",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VATTRKT.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "stromriktning",
+        "icon-rotation-alignment": "map",
+        "icon-rotate": [
+          "get",
+          "rotation"
+        ],
+        "icon-size": 2
+      }
+    },
+    {
+      "id": "overvattensten",
+      "type": "circle",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ÖVSTEN.C"
+        ]
+      ],
+      "paint": {
+        "circle-radius": 3,
+        "circle-color": "rgb(0, 166, 255)"
+      }
+    },
+    {
+      "id": "brygga",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BRYGGA.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "avbarare",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "AVBÄRARE.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "dammbyggnad_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "DAMMB.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "square",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 0, 0)",
+        "line-opacity": 1,
+        "line-width": 3
+      }
+    },
+    {
+      "id": "damm",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "DAMMB.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "square",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(255, 255, 255)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "dykdalb",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "DYKDALB.K"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "kaj_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KAJ.K"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(0, 0, 0)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "kaj_mittlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KAJ.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(0, 0, 0)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "ledverk",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "LEDVERK.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "pir_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "PIR.K"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(0, 0, 0)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "pir_mittlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "PIR.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "vattentub",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VTUB.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 1
+      }
+    },
+    {
+      "id": "vattentub_hatching",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "hydrografi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VTUB.M"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "triangelpunkt",
+        "symbol-spacing": 25,
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-size": 5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "traktorvag",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "ÖVÄGTRA.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(153, 153, 153)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "id": "gangstig",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "ÖVÄGSTI.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(127, 127, 127)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          0.05,
+          3
+        ]
+      }
+    },
+    {
+      "id": "elljusspar_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "ÖVÄGELS.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(255, 255, 115)",
+        "line-opacity": 1,
+        "line-width": 2.25
+      }
+    },
+    {
+      "id": "elljusspar",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "ÖVÄGELS.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(127, 127, 127)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          0.05,
+          3
+        ]
+      }
+    },
+    {
+      "id": "cykelvag",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "ÖVÄGCYK.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(219, 120, 54)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          6,
+          2
+        ]
+      }
+    },
+    {
+      "id": "bilvag_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGBN.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(51, 51, 51)",
+        "line-opacity": 1,
+        "line-width": 4
+      }
+    },
+    {
+      "id": "bilvag",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGBN.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(229, 229, 229)",
+        "line-opacity": 1,
+        "line-width": 3.4
+      }
+    },
+    {
+      "id": "bilvag_samre",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGBS.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(179, 179, 179)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          9,
+          3
+        ]
+      }
+    },
+    {
+      "id": "allman_vag_under_byggnad",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA0BY.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(217, 76, 38)",
+        "line-opacity": 1,
+        "line-width": 3,
+        "line-dasharray": [
+          14,
+          3
+        ]
+      }
+    },
+    {
+      "id": "kvartersvag",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGKV.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(179, 179, 179)",
+        "line-opacity": 1,
+        "line-width": 3
+      }
+    },
+    {
+      "id": "farjeled",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "FÄRJELED"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(217, 76, 38)",
+        "line-opacity": 1,
+        "line-width": 4,
+        "line-dasharray": [
+          5,
+          1
+        ]
+      }
+    },
+    {
+      "id": "allman_vag_3_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA3.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 89, 51)",
+        "line-opacity": 1,
+        "line-width": 6
+      }
+    },
+    {
+      "id": "allman_vag_3",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA3.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(255, 255, 255)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "allman_vag_2_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA2.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 89, 51)",
+        "line-opacity": 1,
+        "line-width": 6
+      }
+    },
+    {
+      "id": "allman_vag_2",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA2.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(204, 204, 204)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "allman_vag_1_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA1.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 89, 51)",
+        "line-opacity": 1,
+        "line-width": 6
+      }
+    },
+    {
+      "id": "allman_vag_1",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGA1.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(204, 204, 204)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "motorvag_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGMO.D"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 89, 51)",
+        "line-opacity": 1,
+        "line-width": 7
+      }
+    },
+    {
+      "id": "motorvag",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGMO.D"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(204, 204, 204)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "allman_vag_skild_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGAS.D"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 89, 51)",
+        "line-opacity": 1,
+        "line-width": 6
+      }
+    },
+    {
+      "id": "allman_vag_skild",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGAS.D"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(204, 204, 204)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "genomfartsgata_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGGG.D",
+          "VÄGGG.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 89, 51)",
+        "line-opacity": 1,
+        "line-width": 6
+      }
+    },
+    {
+      "id": "genomfartsgata",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGGG.D",
+          "VÄGGG.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(204, 204, 204)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "vandplan",
+      "type": "circle",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Point"
+        ],
+        [
+          "==",
+          "typ",
+          "VÄNDPL.C"
+        ]
+      ],
+      "paint": {
+        "circle-radius": 4,
+        "circle-color": "rgb(255, 255, 255)",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "rgb(78, 78, 78)"
+      }
+    },
+    {
+      "id": "vagbom",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Point"
+        ],
+        [
+          "==",
+          "typ",
+          "VÄGBOM.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "vagbom",
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": [
+          "get",
+          "rotation"
+        ],
+        "icon-size": 1
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "vandringsled",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VANDLED"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(230, 140, 175)",
+        "line-opacity": 0.65,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "jarnvag_enkelspar_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGR1.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(140, 140, 140)",
+        "line-opacity": 1,
+        "line-width": 5
+      }
+    },
+    {
+      "id": "jarnvag_enkelspar",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGR1.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(255, 255, 255)",
+        "line-opacity": 1,
+        "line-width": 4,
+        "line-dasharray": [
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "id": "jarnvag_dubbelspar_casing",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGR2.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(140, 140, 140)",
+        "line-opacity": 1,
+        "line-width": 5
+      }
+    },
+    {
+      "id": "jarnvag_dubbelspar",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGR2.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(255, 255, 255)",
+        "line-opacity": 1,
+        "line-width": 4,
+        "line-dasharray": [
+          9,
+          9
+        ]
+      }
+    },
+    {
+      "id": "jarnvag_ovrig",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGÖ.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(102, 102, 102)",
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "jarnvag_ovrig_hatching",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGÖ.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(102, 102, 102)",
+        "line-opacity": 1,
+        "line-width": 9,
+        "line-dasharray": [
+          0.2,
+          3
+        ]
+      }
+    },
+    {
+      "id": "jarnvag_under_byggnad",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "JVGBY.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(102, 102, 102)",
+        "line-opacity": 1,
+        "line-width": 1,
+        "line-dasharray": [
+          6,
+          3
+        ],
+        "line-offset": 0,
+        "line-gap-width": 4
+      }
+    },
+    {
+      "id": "underfart",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VÄGMOU.D",
+          "VÄGA1U.M",
+          "VÄGA2U.M",
+          "VÄGA3U.M",
+          "VÄGASU.D",
+          "VÄGGGU.D",
+          "VÄGGGU.M",
+          "VÄGBNU.M",
+          "VÄGBSU.M",
+          "ÖVÄGUND.M",
+          "JVGU.M",
+          "JVGÖU.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(102, 102, 102)",
+        "line-opacity": 1,
+        "line-width": 1,
+        "line-dasharray": [
+          6,
+          3
+        ],
+        "line-offset": 0,
+        "line-gap-width": 4
+      }
+    },
+    {
+      "id": "vagnamn",
+      "source": "vt-source",
+      "source-layer": "kommunikation",
+      "type": "symbol",
+      "filter": [
+        "in",
+        "typ",
+        "VÄGBN.M",
+        "VÄGA1.M",
+        "VÄGAS.D",
+        "VÄGGG.D",
+        "VÄGGG.M",
+        "VÄGA2.M",
+        "VÄGA3.M"
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{etikett}",
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-rotation-alignment": "map",
+        "text-size": {
+          "base": 1,
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "minzoom": 12.2,
+      "paint": {
+        "text-color": "#765",
+        "text-halo-blur": 0.5,
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "byggnad_bostad",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Bostad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 135, 84, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_industri",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Industri"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(163, 163, 163, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_verksamhet",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Verksamhet"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(175, 139, 116, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_samhallsfunk",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Samhällsfunktion"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(239, 127, 119, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_ekonomi",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Ekonomibyggnad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 183, 141, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_komplement",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Komplementbyggnad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 183, 141, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_ovrig",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Övrig byggnad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 183, 141, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "paint": {
+        "line-color": "rgba(128, 128, 128, 1)",
+        "line-width": 1.0
+      }
+    },
+    {
+      "id": "kata",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KÅTA.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kata",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "vindskydd",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VINDSKY.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "vindskydd2",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "vaderkvarn",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VÄDERKV.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "vaderkvarn",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "kyrka",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KYRKA.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kyrka",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "kyrka_liten",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KYRKAL.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kyrka_liten",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "hojdkurva",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hojdkurva",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "568",
+          "575",
+          "560",
+          "583"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(166, 84, 7, 0.4)",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "stodkurva",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "hojdkurva",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "571",
+          "576"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(166, 84, 7, 0.4)",
+        "line-width": 1.5
+      }
+    },
+    {
+      "id": "hojdkurva_text",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "hojdkurva",
+      "layout": {
+        "text-padding": 2,
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-field": "{etikett}",
+        "text-size": 12,
+        "text-anchor": "center",
+        "text-rotate": [
+          "get",
+          "rotation"
+        ],
+        "text-max-angle": 360,
+        "text-rotation-alignment": "map"
+      },
+      "paint": {
+        "text-color": "rgba(166, 84, 7, 0.5)"
+      }
+    },
+    {
+      "id": "renstangsel",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ANLRENST"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "linbana",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "LINBANA"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "linbana_hatching",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "LINBANA"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-dasharray": [
+          0.05,
+          2
+        ],
+        "line-width": 10
+      }
+    },
+    {
+      "id": "rorledning",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "RÖRLEDN.M"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "rorledning_hatching",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "RÖRLEDN.M"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "kata",
+        "symbol-spacing": 25,
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "begravningsplats",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEGRAV.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "begravningsplats",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "vindkraftverk",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VINDKR.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "vindkraft",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "klockstapel",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KLOCKST.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kyrka_liten",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "mast",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MAST.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "mast",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "skorsten",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "anlaggning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SKORST.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "skorsten",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "kraftledning",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kraftledning",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "KRAFTRE.M",
+          "KRAFTFÖ.M"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "kraftledning_hatching",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kraftledning",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "KRAFTRE.M",
+          "KRAFTFÖ.M"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-dasharray": [
+          0.05,
+          6
+        ],
+        "line-width": 10
+      }
+    },
+    {
+      "id": "kraftledning_stam",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kraftledning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KRAFTST.M"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "kraftledning_stam_hatching",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kraftledning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KRAFTST.M"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-dasharray": [
+          0.08,
+          8
+        ],
+        "line-width": 14
+      }
+    },
+    {
+      "id": "pipeline",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "kraftledning",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "RÖRLEDN.M"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(128, 128, 128)",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "reservat_ovrig",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "NATDSY",
+          "NATKRESY",
+          "NATORY"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 0, 0)",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "naturskyddat_omrade",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "NATNMY",
+          "NATPARK",
+          "NATRES"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(87, 204, 45)",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "forbud_terrangfordon",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SKOTERF"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(196, 73, 130)",
+        "line-width": 8
+      }
+    },
+    {
+      "id": "militart_skjutfalt",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MILSKJU"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 166, 230)",
+        "line-width": 3
+      }
+    },
+    {
+      "id": "ovningsfalt_militart",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MILÖVN"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(0, 166, 230)",
+        "line-width": 3
+      }
+    },
+    {
+      "id": "bebyggelselamning",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BEBLÄMN.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "bebyggelslamning",
+        "icon-rotation-alignment": "map",
+        "icon-rotate": [
+          "get",
+          "rotation"
+        ],
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "byggnadsminne",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BMINNE.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "bebyggelslamning",
+        "icon-rotation-alignment": "map",
+        "icon-rotate": [
+          "get",
+          "rotation"
+        ],
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "milstolpe",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MILST.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "milstolpe",
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": [
+          "get",
+          "rotation"
+        ],
+        "icon-size": 1
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "byggnadsminne_litet",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "BMINNEL.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "bebyggelslamning",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "kulturminne",
+      "type": "circle",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KULT.C"
+        ]
+      ],
+      "paint": {
+        "circle-radius": 1.5,
+        "circle-color": "rgb(78, 78, 78)",
+        "circle-opacity": 0.5
+      }
+    },
+    {
+      "id": "kulturhistorisk_lamning_ovrig",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KULT.B"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-dasharray": [
+          8,
+          1
+        ],
+        "line-width": 1
+      }
+    },
+    {
+      "id": "gruvhal_begransningslinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "GRUVOMR.B"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-dasharray": [
+          8,
+          1
+        ],
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "minnessten_stor",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MINNES.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "minnessten",
+        "icon-size": 2
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "minnessten_liten",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MINNESL.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "minnessten",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "naturminne",
+      "type": "circle",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "NATM.C",
+          "ÖVRNAT.C"
+        ]
+      ],
+      "paint": {
+        "circle-radius": 1.2,
+        "circle-color": "rgb(78, 78, 78)",
+        "circle-stroke-width": 1
+      }
+    },
+    {
+      "id": "naturminne_biologiskt",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "NATMBIO.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "naturminne_botaniskt",
+        "icon-padding": 2,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "naturminne_geologiskt",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "NATMGEO.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "naturminne_geologiskt",
+        "icon-padding": 2,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "gruvomrade_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "GRUVOMR.B"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-dasharray": [
+          8,
+          1
+        ],
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "ruin",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "RUIN.K"
+        ]
+      ],
+      "layout": {
+        "icon-image": "ruin",
+        "icon-padding": 2,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "gruvhal_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "GRUVHÅL.K"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-dasharray": [
+          8,
+          1
+        ],
+        "line-opacity": 1,
+        "line-width": 2
+      }
+    },
+    {
+      "id": "fornlamning_liten",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORNL.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "fornlamning",
+        "icon-padding": 2,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "fornlamning_mittlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORN.M"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "fornlamning_storre",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORN.B"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgb(78, 78, 78)",
+        "line-opacity": 1,
+        "line-width": 2,
+        "line-dasharray": [
+          6,
+          3
+        ]
+      }
+    },
+    {
+      "id": "fornlamning_utan_synligt_marke",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORNUS.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "fornlamning",
+        "icon-padding": 2,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "fornlamning_stor",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORN.S"
+        ]
+      ],
+      "layout": {
+        "icon-image": "fornlamning",
+        "icon-padding": 2,
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "fornlamning_mindre",
+      "type": "circle",
+      "source": "vt-source",
+      "source-layer": "bestammelse",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "FORN.C"
+        ]
+      ],
+      "paint": {
+        "circle-radius": 1.5,
+        "circle-color": "rgb(83, 83, 83)",
+        "circle-stroke-width": 1
+      }
+    },
+    {
+      "id": "riksgrans",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "adm",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "RIKSGR"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(190, 90, 190, 0.7)",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "territorialgrans",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "adm",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "TERRGR"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(190, 90, 190, 0.7)",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "lansgrans",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "adm",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "LÄNSGR",
+          "LÄNS1:5"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(191, 153, 255, 0.7)",
+        "line-width": 5
+      }
+    },
+    {
+      "id": "kommungrans",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "adm",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "KOMMUNGR",
+          "KOMMUN1:5"
+        ]
+      ],
+      "paint": {
+        "line-color": "rgba(191, 153, 255, 0.7)",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "riksrose",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "adm",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "RIKSRÖSE"
+        ]
+      ],
+      "layout": {
+        "icon-image": "riksrose",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5,
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-anchor": "top-left",
+        "text-offset": [
+          0.3,
+          0.3
+        ],
+        "text-field": "{etikett}"
+      },
+      "paint": {
+        "icon-opacity": 0.7,
+        "text-color": "rgb(0, 0, 0)"
+      }
+    },
+    {
+      "id": "text_forn",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "KULTURTX",
+          "KULTURUTX"
+        ]
+      ],
+      "layout": {
+        "text-size": 14,
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(0, 0, 0)"
+      }
+    },
+    {
+      "id": "text_naturvard",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "NATTX",
+          "NATUTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(65, 152, 33)"
+      }
+    },
+    {
+      "id": "text_militar",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "MILUTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(0, 0, 0)"
+      }
+    },
+    {
+      "id": "text_hydro",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "VATTDRTX",
+          "VATTDELTX",
+          "VATTTX",
+          "GLACIÄRTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(0,128, 230)"
+      }
+    },
+    {
+      "id": "text_sank",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "SANKTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(70, 70, 70)"
+      }
+    },
+    {
+      "id": "text_mark_upplysning",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "TERRUTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(60, 60, 60)"
+      }
+    },
+    {
+      "id": "text_anlaggning",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "ANLUTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(60, 60, 60)"
+      }
+    },
+    {
+      "id": "text_mark",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "TERRTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(70, 70, 70)"
+      }
+    },
+    {
+      "id": "text_bebyggelse",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "text",
+      "filter": [
+        "all",
+        [
+          "in",
+          "typ",
+          "BEBTX",
+          "KYRKATX",
+          "BEBTÄTTX",
+          "ANLTX"
+        ]
+      ],
+      "layout": {
+        "text-size": [
+          "*",
+          1.5,
+          [
+            "get",
+            "storlek"
+          ]
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-field": "{etikett}",
+        "text-anchor": [
+          "get",
+          "position"
+        ],
+        "text-rotate": [
+          "get",
+          "rotation"
+        ]
+      },
+      "paint": {
+        "text-color": "rgb(0, 0, 0)"
+      }
+    },
+    {
+      "id": "byggnad_text",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "layout": {
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-field": "{etikett}",
+        "text-rotation-alignment": "map",
+        "symbol-spacing": 50000
+      },
+      "paint": {
+        "text-color": "rgb(0, 0, 0)"
+      }
+    }
+  ]
+}

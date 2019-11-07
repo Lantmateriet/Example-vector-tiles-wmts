@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MVT Testklient</title>    
+    <meta charset="utf-8" name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+
+<style>
+  #features {
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+        overflow: auto;
+        background: rgba(255, 255, 255, 0.8);
+  }  
+  #coords {
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        margin: 0px auto;
+        padding: 10px;
+        font-size: 12px;
+        text-align: left;
+        color: #222;
+  }
+
+  #menu {
+      background: #fff;
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      left: 10px;
+      border-radius: 3px;
+      width: 120px;
+      border: 1px solid rgba(0,0,0,0.4);
+      font-family: 'Open Sans', sans-serif;
+  }
+  #menu a {
+      font-size: 13px;
+      color: #404040;
+      display: block;
+      margin: 0;
+      padding: 0;
+      padding: 10px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.25);
+      text-align: center;
+  }
+
+  #menu a:last-child {
+      border: none;
+  }
+
+  #menu a:hover {
+      background-color: #f8f8f8;
+      color: #404040;
+  }
+
+  #menu a.active {
+      background-color: #3887be;
+      color: #ffffff;
+  }
+
+  #menu a.active:hover {
+      background: #3074a4;
+  }  
+</style>
+<nav id="menu"></nav>
+<div id="map"></div>
+<div id="features"></div>
+<pre id="coords"></pre>
+
+<script>
+
+var lng, lat, zoom;
+initView();
+
+var map = new mapboxgl.Map({
+    container: "map",
+    style: "style/byggnad.json",
+    zoom: zoom,
+    center: [lng, lat]
+});
+
+map.addControl(new mapboxgl.NavigationControl());
+var scale = new mapboxgl.ScaleControl({
+    maxWidth: 80,
+    unit: 'imperial'
+});
+
+var features = document.getElementById('features');
+
+map.on('load', function() {
+
+    var styleLayers = map.getStyle().layers;
+    map.on('mousemove', function (e) {
+        feats = map.queryRenderedFeatures(e.point);
+        features.innerHTML = "";
+
+        for (var i = 0; i < feats.length; i++) {
+          var feature = feats[i];
+          var title = document.createElement('strong');
+          title.textContent = feature.sourceLayer + ": " + feature.layer.id;
+          features.appendChild(title);
+          for (var p in feature.properties) {
+            if( feature.properties.hasOwnProperty(p) ) {
+              var field = document.createElement('div');
+              field.textContent = p + ': ' + feature.properties[p];
+              features.appendChild(field);
+            } 
+          }
+        }
+        document.getElementById('coords').innerHTML = JSON.stringify(e.lngLat);
+    });
+
+    map.on('moveend', function (e) {
+        var center = map.getCenter();
+        var zoom = map.getZoom();
+        window.location.replace("#" + center.lng + "/" + center.lat + "/" + zoom);
+    });    
+
+    var back1 = {
+        'id': 'topowebb',
+        'type': 'raster',
+        'source': {
+            'type': 'raster',
+            'tiles': [
+                'http://maps-ver.lantmateriet.se/topowebb/v1.1/wmts/1.0.0/topowebb/default/3857/{z}/{y}/{x}.png'
+            ],
+            'tileSize': 256
+        },
+        'layout': {
+            'visibility': 'none'
+        },        
+    }
+
+    map.addLayer(back1, styleLayers[0].id);
+    addMenuItem('TWK', [back1], 'none');
+
+    var back2 = {
+        'id': 'topowebb_nedtonad',
+        'type': 'raster',
+        'source': {
+            'type': 'raster',
+            'minzoom': 0,
+            'maxzoom': 17,
+            'tiles': [
+                'http://maps-ver.lantmateriet.se/topowebb/v1.1/wmts/1.0.0/topowebb_nedtonad/default/3857/{z}/{y}/{x}.png'
+            ],
+            'tileSize': 256
+        },
+        'layout': {
+            'visibility': 'none'
+        },        
+    }
+
+    map.addLayer(back2, styleLayers[0].id);
+    addMenuItem('TWK Nedtonad', [back2], 'none');
+
+    var inspectLayers = [];
+    for (var i = 0; i < styleLayers.length; i++) {
+        var mapLayer = styleLayers[i];
+        var inspectLayer = null;
+
+        if (mapLayer.type == 'fill') {
+            inspectLayer = createInspectLayer(mapLayer, {
+                'type': 'fill',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'filter': ['==', '$type', 'Polygon'],
+                'paint': {
+                    'fill-color': 'rgba(0, 0, 0, 0)',
+                    'fill-outline-color': 'rgba(255, 0, 0, 1)',
+                    
+                }        
+            });
+        } else if (mapLayer.type == 'line') {
+            inspectLayer = createInspectLayer(mapLayer, {
+                'type': 'line',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'filter': ['==', '$type', 'LineString'],
+                'paint': {
+                    'line-color': 'rgba(255, 0, 0, 1)',
+                    'line-opacity': 1,
+                    'line-width': 1
+                }        
+            });
+
+        } else if (mapLayer.type == 'symbol' || mapLayer.type == 'circle') {
+            inspectLayer = createInspectLayer(mapLayer, {
+                'type': 'circle',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'filter': ['==', '$type', 'Point'],
+                'paint': {
+                    'circle-radius': 4,
+                    'circle-color': 'rgba(0, 0, 0, 0)',
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': 'rgb(255, 0, 0)'
+                }
+            });
+        }
+
+        if (inspectLayer) {
+            inspectLayers.push(inspectLayer);
+            map.addLayer(inspectLayer, styleLayers[0].id);
+        }
+    }
+
+    function createInspectLayer(mapLayer, templateLayer) {
+        var inspectLayerName = 'all.' + mapLayer.type + '.' + mapLayer.source + '.' + mapLayer['source-layer'];
+        var inspectLayer = map.getLayer(inspectLayerName);
+
+        if (inspectLayer == null) {
+            templateLayer.id = inspectLayerName;
+            templateLayer.source = mapLayer.source;
+            templateLayer['source-layer'] = mapLayer['source-layer'];
+            return templateLayer;  
+        } else {
+            return null;
+        }
+    }
+
+    addMenuItem("Inspect", inspectLayers, "none");
+    addMenuItem("Map", styleLayers, "visible");
+
+    function addMenuItem(name, mapLayers, visibility) {
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = (visibility == 'visible') ? 'active' : '';
+        link.textContent = name;
+
+        link.onclick = function (e) {
+            var clickedLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
+
+            for (var i = 0; i < mapLayers.length; i++) {
+                var mapLayer = mapLayers[i];
+                var visibility = map.getLayoutProperty(mapLayer.id, 'visibility');
+
+                if (visibility === 'visible') {
+                    map.setLayoutProperty(mapLayer.id, 'visibility', 'none');
+                    this.className = '';
+                } else {
+                    this.className = 'active';
+                    map.setLayoutProperty(mapLayer.id, 'visibility', 'visible');
+                }
+            }
+        };
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+    }
+});
+
+function initView() {
+    var pos = window.location.href.lastIndexOf("#");
+    if (pos != -1) {
+        var coords = window.location.href.substring(pos + 1);
+        var items = coords.split("/");
+        if (items.length == 3) {
+            lng = items[0];
+            lat = items[1];
+            zoom = items[2];
+        }
+    } else {
+        lng = 16.173794491817716;
+        lat = 58.58481005054165;
+        zoom = 16.864514560780854;
+    }
+}
+
+</script>
+
+</body>
+</html>

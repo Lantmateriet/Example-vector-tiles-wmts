@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MVT OpenLayers</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="https://cdn.rawgit.com/boundlessgeo/ol-mapbox-style/v3.3.0/dist/olms.js"></script>
+
+
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #menu {
+            background: #fff;
+            position: absolute;
+            z-index: 1;
+            top: 100px;
+            left: 10px;
+            border-radius: 3px;
+            width: 120px;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #menu a {
+            font-size: 13px;
+            color: #404040;
+            display: block;
+            margin: 0;
+            padding: 0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+
+        #menu a:last-child {
+            border: none;
+        }
+
+        #menu a:hover {
+            background-color: #f8f8f8;
+            color: #404040;
+        }
+
+        #menu a.active {
+            background-color: #3887be;
+            color: #ffffff;
+        }
+
+        #menu a.active:hover {
+            background: #3074a4;
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav id="menu"></nav>
+    <div id="map"></div>
+    <script>
+      var lng, lat, zoom;
+      initView();
+
+      const extent = [-1200000, 4305696, 2994304, 8500000];
+      const resolutions = [4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1, 0.5];
+      const matrixIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      const tileGrid = new ol.tilegrid.WMTS({
+        extent: extent,
+        resolutions: resolutions,
+        matrixIds: matrixIds
+      });
+
+      var twkLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+          url: 'http://maps-ver.lantmateriet.se/topowebb/v1.1/wmts/1.0.0/topowebb_nedtonad/default/3006/{z}/{y}/{x}.png',
+          tileGrid: tileGrid,
+          maxZoom: 13
+        })
+      });
+
+      var byggnadLayer = new ol.layer.VectorTile({
+        declutter: true,
+        source: new ol.source.VectorTile({
+          url: 'https://mapslab.lantmateriet.se/vt-open/wmts/1.0.0/byggnad/default/3006/{z}/{y}/{x}.mvt',
+          tileGrid: tileGrid,
+          format: new ol.format.MVT()
+        })
+      });
+
+      var map = new ol.Map({
+        target: 'map',
+        view: new ol.View({
+          resolutions: resolutions,
+          center: [lng, lat],
+          zoom: zoom
+        })
+      });
+
+      map.addLayer(twkLayer);
+      addMenuItem('TWK', twkLayer, false);
+
+      loadStyle(byggnadLayer, 'style/byggnad.json', 'vt-source');
+      map.addLayer(byggnadLayer);
+      addMenuItem('Byggnader', byggnadLayer, true);
+
+      map.on('moveend', function (e) {
+        var center = map.getView().getCenter();
+        var zoom = map.getView().getZoom();
+        window.location.replace('#' + center[0] + '/' + center[1] + '/' + zoom);
+      });
+
+      function loadStyle(layer, file, source) {
+        fetch(file).then(function(response) {
+          response.json().then(function(glStyle) {
+            olms.applyStyle(layer, glStyle, source)
+          });
+        });
+      }
+
+      function initView() {
+        var pos = window.location.href.lastIndexOf('#');
+        if (pos != -1) {
+          var coords = window.location.href.substring(pos + 1);
+          var items = coords.split('/');
+          if (items.length == 3) {
+            lng = parseFloat(items[0]);
+            lat = parseFloat(items[1]);
+            zoom = parseFloat(items[2]);
+          }
+        } else {
+          lng = 568198;
+          lat = 6494362;
+          zoom = 16;
+        }
+      }
+
+      function addMenuItem(name, mapLayer, visible) {
+          var link = document.createElement('a');
+          link.href = '#';
+          link.className = visible ? 'active' : '';
+          link.textContent = name;
+          mapLayer.setVisible(visible);
+
+          link.onclick = function (e) {
+              var clickedLayer = this.textContent;
+              e.preventDefault();
+              e.stopPropagation();
+
+              if (mapLayer.getVisible()) {
+                mapLayer.setVisible(false)
+                this.className = '';
+              } else {
+                mapLayer.setVisible(true)
+                this.className = 'active';
+              }
+          };
+          var menuItems = document.getElementById('menu');
+          menuItems.appendChild(link);
+      }
+
+
+    </script>
+  </body>
+</html>

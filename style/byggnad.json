@@ -1,0 +1,282 @@
+{
+  "version": 8,
+  "metadata": {},
+  "sources": {
+    "vt-source": {
+      "type": "vector",
+      "minzoom": 14,
+      "maxzoom": 17,
+      "tiles": [
+        "https://mapslab.lantmateriet.se/vt-open/wmts/1.0.0/byggnad/default/3857/{z}/{y}/{x}.mvt"
+      ]
+    }
+  },
+  "sprite": "https://mapslab.lantmateriet.se/vt/resources/style/symbols/twk",
+  "glyphs": "https://mapslab.lantmateriet.se/vt/resources/style/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "byggnad_bostad",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Bostad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 135, 84, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_industri",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Industri"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(163, 163, 163, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_verksamhet",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Verksamhet"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(175, 139, 116, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_samhallsfunk",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Samhällsfunktion"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(239, 127, 119, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_ekonomi",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Ekonomibyggnad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 183, 141, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_komplement",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Komplementbyggnad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 183, 141, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_ovrig",
+      "type": "fill",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "Övrig byggnad"
+        ]
+      ],
+      "paint": {
+        "fill-color": "rgba(201, 183, 141, 1)",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "byggnad_kantlinje",
+      "type": "line",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "paint": {
+        "line-color": "rgba(128, 128, 128, 1)",
+        "line-width": 1.0
+      }
+    },
+    {
+      "id": "kata",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KÅTA.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kata",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "vindskydd",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VINDSKY.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "vindskydd2",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "vaderkvarn",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "VÄDERKV.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "vaderkvarn",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "kyrka",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KYRKA.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kyrka",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "kyrka_liten",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "filter": [
+        "all",
+        [
+          "==",
+          "typ",
+          "KYRKAL.C"
+        ]
+      ],
+      "layout": {
+        "icon-image": "kyrka_liten",
+        "icon-rotation-alignment": "map",
+        "icon-size": 1.5
+      },
+      "paint": {
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "byggnad_text",
+      "type": "symbol",
+      "source": "vt-source",
+      "source-layer": "byggnad",
+      "layout": {
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-field": "{etikett}",
+        "text-rotation-alignment": "map",
+        "symbol-spacing": 50000
+      },
+      "paint": {
+        "text-color": "rgb(0, 0, 0)"
+      }
+    }
+  ]
+}
